@@ -6,13 +6,13 @@
                 <th>Category Name</th>
                 <th>Completed Date</th>
             </tr>
-                <% for(let i=0; i < completedToDos.length; i++) { %>
+                <% completedToDos.forEach(function(completedToDo) { %>
                     <tr                    >
-                        <td><%= completedToDos[i].Title %></td>
-                        <td><%= completedToDos[i].Name %></td>
-                        <td><%= completedToDos[i].CompletedDate.toDateString() %></td>
+                        <td><%= completedToDo.Title %></td>
+                        <td><%= completedToDo.Name %></td>
+                        <td><%= completedToDo.CompletedDate.toDateString() %></td>
                     </tr>
-                <%}%>
+                  <% }); %>
         </table>
     </div>
 </div>

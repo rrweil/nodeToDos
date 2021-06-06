@@ -7,16 +7,18 @@
                 <th>Due Date</th>
                 <th>Completed Date</th>
             </tr>
-            <% for(let i=0; i < toDos.length; i++) { %>
+ 
+
+            <% toDos.forEach(function(toDo) { %>
                 <tr>
-                    <td><%= toDos[i].Title %></td>
-                    <td><%= toDos[i].Name %></td>
-                    <td><%= toDos[i].DueDate.toDateString() %></td>
+                    <td><%= toDo.Title %></td>
+                    <td><%= toDo.Name %></td>
+                    <td><%= toDo.DueDate.toDateString() %></td>
                     <td>
-                        <%= toDos[i].CompletedDate === null ? 'N/A' : toDos[i].CompletedDate.toDateString() %>
+                        <%= toDo.CompletedDate === null ? 'N/A' : toDo.CompletedDate.toDateString() %>
                     </td>
                 </tr>
-            <%}%>
+              <% }); %>
         </table>
     </div>
 </div>

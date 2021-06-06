@@ -7,18 +7,20 @@
                 <th>Category Name</th>
                 <th>Edit</th>
             </tr>
-                <% for(let i=0; i < categories.length; i++) { %>
+    
+
+                <% categories.forEach(function(category) { %>
                     <tr>
-                        <td>
-                            <a href="/toDo/byCategory?id=<%= categories[i].Id %>">
-                                <%= categories[i].Name %>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/toDo/editCategory?id=<%= categories[i].Id %>" class="btn btn-warning">Edit</a>
-                        </td>
-                    </tr>
-                <%}%>
+                    <td>
+                        <a href="/toDo/byCategory?id=<%= category.Id %>">
+                            <%= category.Name %>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/toDo/editCategory?id=<%= category.Id %>" class="btn btn-warning">Edit</a>
+                    </td>
+                    </tr>   
+                  <% }); %>
         </table>
     </div>
 </div>

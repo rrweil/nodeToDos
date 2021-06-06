@@ -10,19 +10,19 @@
                     <th>Due Date</th>
                     <th>Mark as Completed</th>
                 </tr>
-                <% for(let i=0; i < toDos.length; i++) { %>
-                    <tr  class="<%= toDos[i].DueDate < new Date() ? 'table-danger' : '' %>"      >
-                        <td><%= toDos[i].Title %></td>
-                        <td><%= toDos[i].Name %></td>
-                        <td><%= toDos[i].DueDate.toDateString() %></td>
+                <% toDos.forEach(function(toDo) { %>
+                    <tr  class="<%= toDo.DueDate < new Date() ? 'table-danger' : '' %>"      >
+                        <td><%= toDo.Title %></td>
+                        <td><%= toDo.Name %></td>
+                        <td><%= toDo.DueDate.toDateString() %></td>
                         <td>
                             <form method="post" action="/toDo/markascompleted">
-                                <input name="id" value="<%= toDos[i].Id %>" type="hidden" />
+                                <input name="id" value="<%= toDo.Id %>" type="hidden" />
                                 <button class="btn btn-primary">Mark as Completed</button>
                             </form>
                         </td>
                     </tr>
-                <%}%>
+                  <% }); %>
             </table>
         </div>
     </div>
