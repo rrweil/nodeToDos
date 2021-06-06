@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <a href="/toDo/addCategory" class="btn btn-success">New Category</a>
+        <br />
+        <table class="table table-hover table-striped table-bordered">
+            <tr>
+                <th>Category Name</th>
+                <th>Edit</th>
+            </tr>
+                <% for(let i=0; i < categories.length; i++) { %>
+                    <tr>
+                        <td>
+                            <a href="/toDo/byCategory?id=<%= categories[i].Id %>">
+                                <%= categories[i].Name %>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/toDo/editCategory?id=<%= categories[i].Id %>" class="btn btn-warning">Edit</a>
+                        </td>
+                    </tr>
+                <%}%>
+        </table>
+    </div>
+</div>
